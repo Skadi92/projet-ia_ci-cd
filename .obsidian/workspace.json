@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "cdbee4c9019b01d1",
+    "type": "split",
+    "children": [
+      {
+        "id": "5a0726ddfe323f9c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "977d25819b6bde01",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Gestion de projet/Tâches/1. Gestion de projet.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "1. Gestion de projet"
+            }
+          },
+          {
+            "id": "f800e40d457f4531",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Réalisation/2. Security/Compréhension du besoin.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Compréhension du besoin"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ab2de98642d3457c",
+    "type": "split",
+    "children": [
+      {
+        "id": "8cac1298ab92ec65",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ff9b7308d4eb8768",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "738845be2aba7be0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "60f75821783d8061",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 292.5
+  },
+  "right": {
+    "id": "98c276de627e5bb7",
+    "type": "split",
+    "children": [
+      {
+        "id": "36e3a7ec4029ec45",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7656d91e9e4b7102",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Réalisation/2. Security/Compréhension du besoin.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Compréhension du besoin"
+            }
+          },
+          {
+            "id": "31b842dfcd628468",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Réalisation/2. Security/Compréhension du besoin.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Compréhension du besoin"
+            }
+          },
+          {
+            "id": "6cfabfef3b3a2bd2",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d94c230a905629ea",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "6a4c5a923b0db19e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Réalisation/2. Security/Compréhension du besoin.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Compréhension du besoin"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "f800e40d457f4531",
+  "lastOpenFiles": [
+    "Réalisation/1. IA_CI-CD/Compréhension du besoin.md",
+    "Réalisation/2. Security/Compréhension du besoin.md",
+    "Réalisation/1. IA_CI-CD/1.1 IA/To-Do.md",
+    "Réalisation/1. IA_CI-CD/1.2 Github/To-Do.md",
+    "Gestion de projet/Tâches/3. Assignations.md",
+    "Gestion de projet/1. Découpage de projet.md",
+    "Gestion de projet/Tâches/2. Gouvernance.md",
+    "Gestion de projet/Tâches/1. Gestion de projet.md",
+    "Réalisation/3. System/3.1 Whatsup Docker/To-Do.md",
+    "Réalisation/4. Supervision/4.1 Zabbix/To-Do.md",
+    "Réalisation/2. Security/2.1 BunkerWeb/To-Do.md",
+    "Réalisation/1. IA_CI-CD/1.3 VSCode/To-Do.md",
+    "Réalisation/4. Supervision/4.1 Zabbix",
+    "Documentation/Livrables de projet/Untitled.base",
+    "Documentation/Livrables de projet/Untitled.canvas",
+    "Réalisation/IA_CI-CD/Untitled",
+    "Documentation/DEX/3. System",
+    "Documentation/DEX/IA_CI-CD/Untitled",
+    "Documentation/DEX/4. Supervision",
+    "Documentation/DEX/2. Security",
+    "Documentation/DEX/1. IA_CI-CD",
+    "Documentation/DAT/4. Supervision",
+    "Documentation/DAT/3. System",
+    "Réalisation/IA_CI-CD/Untitled.md",
+    "Réalisation/Security/BunkerWeb/Untitled/T.md",
+    "Welcome.md"
+  ]
+}
