@@ -1,3 +1,4 @@
+# Compréhension du besoin 
 
 Déployer une infrastructure VSCode boostée à l'IA afin de créer un environnement collaboratif de développement synchronisé par l'IA et géré par Github.
 

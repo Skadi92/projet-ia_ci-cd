@@ -1,3 +1,4 @@
+# Compréhension du besoin
 
 Déployer une solution de WAF (Web Application Filter) afin de router le trafic internet vers les applications internes, journaliser les connexions et protéger l'infrastructure de l'association
 
