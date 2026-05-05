@@ -1,0 +1,104 @@
+version: "3.8"
+
+# =============================================================
+# BunkerWeb - Phase Pilote
+# -------------------------------------------------------------
+# Flux HTTP (port 80) :
+#   Internet → Pare-feu → BunkerWeb (10080) → NPM (80) → Apps
+#   Internet → Pare-feu → BunkerWeb (10080) → Traefik (80) → Easy4IA
+#
+# Flux HTTPS (port 443) :
+#   Internet → Pare-feu → NPM (443) directement  ← inchangé
+#
+# SSL : géré par NPM (pas de Let's Encrypt sur BunkerWeb)
+# =============================================================
+
+services:
+
+  bunkerweb:
+    image: bunkerity/bunkerweb:1.5.12
+    ports:
+      - "10080:8080"
+    labels:
+      - "bunkerweb.INSTANCE=yes"
+    environment:
+      # --- Instances & API ---
+      - API_WHITELIST_IP=127.0.0.0/8 172.16.0.0/12 192.168.0.0/16
+
+      # --- Domaines ---
+      - SERVER_NAME=easyformer.fr easy4ia.fr
+      - MULTISITE=yes
+
+      # --- WAF global ---
+      - USE_MODSECURITY=yes
+      - USE_BAD_BEHAVIOR=yes
+      - USE_LIMIT_REQ=yes
+      - USE_DNSBL=yes
+      - USE_ANTIBOT=no          # passer à "captcha" après validation
+      - USE_GZIP=yes
+
+      # --- easyformer.fr → NPM ---
+      - easyformer.fr_USE_REVERSE_PROXY=yes
+      - easyformer.fr_REVERSE_PROXY_URL=/
+      - easyformer.fr_REVERSE_PROXY_HOST=http://CONTENEUR_NPM:80
+
+      # --- easy4ia.fr → Traefik directement ---
+      - easy4ia.fr_USE_REVERSE_PROXY=yes
+      - easy4ia.fr_REVERSE_PROXY_URL=/
+      - easy4ia.fr_REVERSE_PROXY_HOST=http://CONTENEUR_TRAEFIK:80
+
+    networks:
+      - bw-universe
+      - npm-network       # réseau Docker de NPM    (voir docker network ls)
+      - traefik-network   # réseau Docker de Traefik (voir docker network ls)
+    restart: unless-stopped
+    depends_on:
+      - bunkerweb-scheduler
+
+  bunkerweb-scheduler:
+    image: bunkerity/bunkerweb-scheduler:1.5.12
+    environment:
+      - BUNKERWEB_INSTANCES=bunkerweb
+      - SERVER_NAME=
+      - DATABASE_URI=mariadb+pymysql://bunkerweb:${BW_DB_PASSWORD}@bw-db:3306/bunkerweb
+    volumes:
+      - bw-data:/data
+    networks:
+      - bw-universe
+      - bw-db-net
+    restart: unless-stopped
+    depends_on:
+      - bw-db
+
+  bw-db:
+    image: mariadb:10.10
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=bunkerweb
+      - MYSQL_USER=bunkerweb
+      - MYSQL_PASSWORD=${BW_DB_PASSWORD}
+    volumes:
+      - bw-db-data:/var/lib/mysql
+    networks:
+      - bw-db-net
+    restart: unless-stopped
+
+networks:
+  bw-universe:
+    name: bw-universe
+
+  bw-db-net:
+    name: bw-db-net
+    internal: true  # la DB n'est pas accessible de l'extérieur
+
+  npm-network:
+    external: true
+    name: RESEAU_NPM        # ← remplacer après "docker network ls"
+
+  traefik-network:
+    external: true
+    name: RESEAU_TRAEFIK    # ← remplacer après "docker network ls"
+
+volumes:
+  bw-data:
+  bw-db-data:
