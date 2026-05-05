@@ -17,4 +17,10 @@ Traefik redirige les requêtes envoyées par NPM vers Easy4IA, ce qui ajoute une
 
 Déployer BunkerWeb en ajoutant une nouvelle couche de redirection : entre le pare-feu et NPM.
 Rediriger le trafic depuis internet en 80 et 443 vers BunkerWeb, qui redirige à son tour sur les mêmes ports à NPM.
-Ajouter une redirection à Traefik directement (sans passer par NPM)
+Ajouter une redirection à Traefik directement (sans passer par NPM) pour le domaine Easy4IA
+
+#### 2. Phase 2
+
+A terme, BunkerWeb doit pouvoir remplacer NPM et Traefik. Les requêtes feraient :
+Internet -> Pare-feu -> BunkerWeb -> Service Interne
+Tout serait loggué, analysé et redirigé vers le bon service.
