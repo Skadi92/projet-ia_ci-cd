@@ -4,3 +4,6 @@
 
 # Obsidian
 .obsidian/
+
+# Images
+*.png
